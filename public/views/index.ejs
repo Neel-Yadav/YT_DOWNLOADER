@@ -1,0 +1,69 @@
+<!-- Home.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="headerLogo">
+        <img src="/assets/logo.png" alt="logo.png" class="headerLogo-Img" />
+        <!-- <h1 class="headerLogo-Text">YT<span>DOWN</span></h1> -->
+      </a>
+      <nav>
+        <ul class="navList">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/link" class="">Shorter</a></li>
+        </ul>
+
+        <button class="NL_Donate-Button" type="button">Donate</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="SearchBox">
+        <div class="SearchBox_Main">
+          <div class="SearchBox_Input">
+            <input type="text" placeholder="Search..." id="SEARCH_URL" />
+          </div>
+          <button class="SearchBox_Button" onclick="getVideoInfo()">
+            <span id="Find_Button">Find</span>
+          </button>
+        </div>
+        <div class="status" id="STATUS_TEXT" style="display: none">
+          Your Query Is Fetched From This URL :
+        </div>
+      </div>
+      <div class="videoInfo" id="VIDEO_INFO_BOX" style="display: none">
+        <img src="" class="Thumbnail" id="Thumbnail" />
+        <a id="DownloadThumbnail" target="_blank">Download Thumbnail</a>
+
+        <div class="FormatSwitcher">
+          <button
+            class="FormatSwitcher-Button"
+            onclick="formatSwitcher(0)"
+            id="btn1"
+          >
+            VIDEO
+          </button>
+          <button class="isSelected" onclick="formatSwitcher(1)" id="btn2">
+            AUDIO
+          </button>
+        </div>
+        <div class="FormatTabs">
+          <div id="videoQualityListTab" class="formatTab">
+            <div id="videoQualityList" class="FT-Content">
+              <!-- Dynamically populated video quality buttons -->
+            </div>
+          </div>
+          <div id="audioQualityListTab" class="formatTab formatTabSelected">
+            <div id="audioQualityList" class="FT-Content"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
